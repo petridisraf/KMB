@@ -3,8 +3,8 @@ import './App.css';
 import React, {useState} from 'react';
 import Axios from 'axios';
 import axios from 'axios';
-import { MDBFooter, MDBContainer,MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
-import Dropdown from 'react-bootstrap/Dropdown';
+import { MDBFooter, MDBContainer,MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem,MDBPagination, MDBPaginationItem, MDBPaginationLink } from 'mdb-react-ui-kit';
+
 
 
 function App() {
@@ -31,7 +31,6 @@ function App() {
           <MDBDropdownMenu>
             <MDBDropdownItem link>Action</MDBDropdownItem>
             <MDBDropdownItem link>Another action</MDBDropdownItem>
-            <MDBDropdownItem link>Something else here</MDBDropdownItem>
           </MDBDropdownMenu>
         </MDBDropdown>
 
@@ -85,6 +84,25 @@ function App() {
 
       </div>
 
+      <nav aria-label='Page navigation example'>
+        <MDBPagination className='mb-0'>
+          <MDBPaginationItem>
+            <MDBPaginationLink href='#'>Previous</MDBPaginationLink>
+          </MDBPaginationItem>
+          <MDBPaginationItem>
+            <MDBPaginationLink href='#'>1</MDBPaginationLink>
+          </MDBPaginationItem>
+          <MDBPaginationItem>
+            <MDBPaginationLink href='#'>2</MDBPaginationLink>
+          </MDBPaginationItem>
+          <MDBPaginationItem>
+            <MDBPaginationLink href='#'>3</MDBPaginationLink>
+          </MDBPaginationItem>
+          <MDBPaginationItem>
+            <MDBPaginationLink href='#'>Next</MDBPaginationLink>
+          </MDBPaginationItem>
+        </MDBPagination>
+      </nav>  
         
       </main>
 
