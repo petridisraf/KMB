@@ -78,8 +78,6 @@ function App() {
           <option value="technology">technology</option>
         </select>
 
-        
-
       </div>
 
       
