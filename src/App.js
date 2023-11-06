@@ -22,26 +22,26 @@ function App() {
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       
-      <div class="dropdown">
-        <button class="dropbtn">R|P Rafail Petridis</button>
-        <div class="dropdown-content">
+      <div className="dropdown">
+        <button className="dropbtn">R|P Rafail Petridis</button>
+        <div className="dropdown-content">
           <a href="#">Setting</a>
           <a href="#">Logout</a>
         </div>
       </div>
 
 
-      <div class="container">
-          <div class="row">
-              <div class="col-md-12">
-                  <div class="fb-profile-block">
-                      <div class="fb-profile-block-thumb cover-container"></div>
-                      <div class="profile-img">
+      <div className="container">
+          <div className="row">
+              <div className="col-md-12">
+                  <div className="fb-profile-block">
+                      <div className="fb-profile-block-thumb cover-container"></div>
+                      <div className="profile-img">
                           <a href="#">
                               <img src="https://media.licdn.com/dms/image/D4E0BAQESoWpfWxecmQ/company-logo_200_200/0/1681324616194/kissmybutton_logo?e=2147483647&v=beta&t=MJUu74MuPZAjle9a8DlYNmfUjSH0ABUABpegjjk2ldI" alt="" title=""/>        
                           </a>
                       </div>
-                      <div class="profile-name">
+                      <div className="profile-name">
                           <h2>Rafail Petridis</h2>
                       </div>
                       
@@ -60,11 +60,11 @@ function App() {
         <div className='row'>
           <div className='col'>
             <div className="card" style={{width: "18rem"}}>
-              <img class="card-img-top" src="..." alt="Card image cap"/>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+              <img className="card-img-top" src="..." alt="Card image cap"/>
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" className="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
