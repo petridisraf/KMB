@@ -16,6 +16,7 @@ function App() {
 
   return (
     <div className="App">
+
       <header className="App-header">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous"/>
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossOrigin="anonymous"></script>
@@ -51,29 +52,37 @@ function App() {
       </div>
       </header>
 
-      <body>
+      <main>
 
       <div className='container my-3'>
         <button className='btn btn-primary' onClick={getNews}>Fetch news</button>
       </div>
       <div className='container'>
-        <div className='row'>
-          <div className='col'>
-            <div className="card" style={{width: "18rem"}}>
-              <img className="card-img-top" src="..." alt="Card image cap"/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
+        <div className='row'>{
+            data.map((value)=>{
+              return(
+                <div className='col-3'>
+                <div className="card" style={{width: "18rem"}}>
+                  <img className="card-img-top" src="..." alt="Card image cap"/>
+                  <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div> 
+              );
+            })
+
+
+        }
+          
         </div> 
 
       </div>
 
         
-      </body>
+      </main>
 
       <footer>
 
