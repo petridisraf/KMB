@@ -3,11 +3,14 @@ import './App.css';
 import React, {useState} from 'react';
 import Axios from 'axios';
 import axios from 'axios';
+import { MDBFooter, MDBContainer,MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
+import Dropdown from 'react-bootstrap/Dropdown';
+
 
 function App() {
   const [data,setData]=useState([])
   const getNews =()=>{
-    axios.get("https://newsapi.org/v2/everything?q=bitcoin&apiKey=956d389a333644709a37dfb930bcd9b0")
+    axios.get("https://newsapi.org/v2/everything?q=a&apiKey=956d389a333644709a37dfb930bcd9b0&page=3&pageSize=6")
     .then((response)=>{
       setData(response.data.articles)
     })
@@ -23,13 +26,14 @@ function App() {
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossOrigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossOrigin="anonymous"></script>
       
-      <div className="dropdown">
-        <button className="dropbtn">R|P Rafail Petridis</button>
-        <div className="dropdown-content">
-          <a href="#">Setting</a>
-          <a href="#">Logout</a>
-        </div>
-      </div>
+        <MDBDropdown>
+          <MDBDropdownToggle>Dropdown button</MDBDropdownToggle>
+          <MDBDropdownMenu>
+            <MDBDropdownItem link>Action</MDBDropdownItem>
+            <MDBDropdownItem link>Another action</MDBDropdownItem>
+            <MDBDropdownItem link>Something else here</MDBDropdownItem>
+          </MDBDropdownMenu>
+        </MDBDropdown>
 
 
       <div className="container">
@@ -52,22 +56,22 @@ function App() {
       </div>
       </header>
 
-      <main>
-
+      <main onLoad={getNews}>
       <div className='container my-3'>
         <button className='btn btn-primary' onClick={getNews}>Fetch news</button>
       </div>
+      
       <div className='container'>
         <div className='row'>{
             data.map((value)=>{
               return(
                 <div className='col-3'>
                 <div className="card" style={{width: "18rem"}}>
-                  <img className="card-img-top" src="..." alt="Card image cap"/>
+                  <img className="card-img-top" src={value.urlToImage} alt="Card image cap"/>
                   <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <h5 className="card-title">{value.title}</h5>
+                    <p className="card-text">{value.description}</p>
+                    <a href="#" className="btn btn-primary">Main News</a>
                   </div>
                 </div>
               </div> 
@@ -85,7 +89,16 @@ function App() {
       </main>
 
       <footer>
+        <MDBFooter className='text-left text-white' style={{ backgroundColor: '#21081a' }}>
+          <MDBContainer className='p-4'></MDBContainer>
 
+          <div className='text-left p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+            © 2020 Copyright:
+            <a className='text-white' href='https://rafailpetridis.com/'>
+              Rafail petridis
+            </a>
+          </div>
+        </MDBFooter>
 
       </footer>
     </div>
