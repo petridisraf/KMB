@@ -4,6 +4,9 @@ import React, {useState} from 'react';
 import Axios from 'axios';
 import axios from 'axios';
 import { MDBFooter, MDBContainer,MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem,MDBPagination, MDBPaginationItem, MDBPaginationLink, MDBSelect  } from 'mdb-react-ui-kit';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
 
 
@@ -26,13 +29,19 @@ function App() {
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossOrigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossOrigin="anonymous"></script>
       <div>
-        <MDBDropdown style={{float: "right"}}>
-          <MDBDropdownToggle>Rafail Petridis</MDBDropdownToggle>
-          <MDBDropdownMenu>
-            <MDBDropdownItem link>Setting</MDBDropdownItem>
-            <MDBDropdownItem link>Log out</MDBDropdownItem>
-          </MDBDropdownMenu>
-        </MDBDropdown>
+          <Navbar className="bg-body-tertiary">
+            <Container>
+              <Navbar.Brand href="#">KMB</Navbar.Brand>
+              <Nav.Link href="#">Signout</Nav.Link>
+              <Nav.Link href="#features">Settings</Nav.Link>
+              <Navbar.Toggle />
+              <Navbar.Collapse className="justify-content-end">
+                <Navbar.Text>
+                  Signed in as: <a href="#login">Rafail Petridis</a>
+                </Navbar.Text>
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>
       </div>
 
       <div className="container">
@@ -128,6 +137,18 @@ function App() {
             © 2020 Copyright:
             <a className='text-white' href='https://rafailpetridis.com/'>
               Rafail petridis
+            </a>
+            <a className='text-white' href='#'>
+            Privacy
+            </a>
+            <a className='text-white' href='#'>
+              Terms
+            </a>
+            <a className='text-white' href='#'>
+            Cookies
+            </a>
+            <a className='text-white' href='#'>
+            More
             </a>
           </div>
         </MDBFooter>
