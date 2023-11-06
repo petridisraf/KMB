@@ -3,7 +3,7 @@ import './App.css';
 import React, {useState} from 'react';
 import Axios from 'axios';
 import axios from 'axios';
-import { MDBFooter, MDBContainer,MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem,MDBPagination, MDBPaginationItem, MDBPaginationLink, MDBIcon } from 'mdb-react-ui-kit';
+import { MDBFooter, MDBContainer,MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem,MDBPagination, MDBPaginationItem, MDBPaginationLink, MDBSelect  } from 'mdb-react-ui-kit';
 
 
 
@@ -25,15 +25,15 @@ function App() {
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossOrigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossOrigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossOrigin="anonymous"></script>
-      
-      <MDBDropdown>
-      <MDBDropdownToggle>Rafail Petridis</MDBDropdownToggle>
-      <MDBDropdownMenu>
-        <MDBDropdownItem link>Setting</MDBDropdownItem>
-        <MDBDropdownItem link>Log out</MDBDropdownItem>
-      </MDBDropdownMenu>
-    </MDBDropdown>
-
+      <div>
+        <MDBDropdown style={{float: "right"}}>
+          <MDBDropdownToggle>Rafail Petridis</MDBDropdownToggle>
+          <MDBDropdownMenu>
+            <MDBDropdownItem link>Setting</MDBDropdownItem>
+            <MDBDropdownItem link>Log out</MDBDropdownItem>
+          </MDBDropdownMenu>
+        </MDBDropdown>
+      </div>
 
       <div className="container">
           <div className="row">
@@ -58,7 +58,21 @@ function App() {
       <main onLoad={getNews}>
       <div className='container my-3'>
         <button className='btn btn-primary' onClick={getNews}>Fetch news</button>
+
+        <select style={{float: "right"}} className="select">
+          <option value="business">Business</option>
+          <option value="entertainment">entertainment</option>
+          <option value="general">general</option>
+          <option value="health">health</option>
+          <option value="science">science</option>
+          <option value="sports">sports</option>
+          <option value="technology">technology</option>
+        </select>
+
       </div>
+
+      
+
       
       <div className='container'>
         <div className='row'>{
